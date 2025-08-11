@@ -58,19 +58,18 @@ const Index = () => {
       <div className="container relative">
 
         <div className={`relative max-lg:fixed max-lg:bg-modalBg max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen ${openMenu === false ? 'max-lg:hidden ':''}`}>                                   
-         <div className={`max-lg:fixed max-lg:top-0 max-lg:pt-5 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-start max-lg:w-72 max-lg:h-screen max-lg:bg-white max-xs:w-full 
-          max-lg:overflow-y-scroll max-lg:overflow-x-hidden
-          `}>
-          <button className="hidden max-lg:block max-lg:absolute max-lg:top-0 max-lg:right-0 max-lg:text-black max-lg:text-2xl" onClick={() => setOpenMenu(false)}><FaXmark/></button>
+         <div className="max-lg:fixed max-lg:top-0 max-lg:pt-8 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:w-72 max-lg:h-screen max-lg:bg-white max-xs:w-full 
+          max-lg:overflow-y-scroll max-lg:overflow-x-hidden max-lg:gap-5">
+          <button className="hidden max-lg:block max-lg:absolute max-lg:top-0 max-lg:right-0 max-lg:text-black " onClick={() => setOpenMenu(false)}><FaXmark className="text-3xl text-navigateBg"/></button>
           {menuItems.map((item) => (
             <button
               key={item}
               onMouseEnter={handleEnter(item)}
               onMouseLeave={handleLeave(item)}
-              className={`font-light text-sm px-3 py-3 transition-all duration-300 max-lg:text-start max-lg:bg-transparent max-lg:w-full max-lg:py-5
+              className={`font-light text-sm px-3 py-3 transition-all duration-300 max-lg:text-start max-lg:bg-transparent max-lg:w-[90%] max-lg:py-5 max-lg:border max-lg:rounded-lg
                 ${
                   item === "Sale"
-                    ? `skew-x-[-12deg] ${
+                    ? `skew-x-[-12deg] max-lg:skew-x-[0deg] ${
                         openDropdown === item 
                           ? 'bg-white text-black'
                           : 'bg-red-600 text-white lg:hover:bg-white lg:hover:text-black'

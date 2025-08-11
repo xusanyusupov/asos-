@@ -27,19 +27,19 @@ const SearchBar = () => {
 
     const dropdown = (
       <div
-      className='w-80 z-[49]  absolute top-5 right-0 border rounded-md flex flex-col bg-white'>
+      className='w-72 z-[49]  absolute top-14 right-0 border rounded-md flex flex-col bg-white'>
           <div className='w-full flex items-center justify-between border-b-2 px-5 py-2'>
                   <div className='flex items-center gap-2'>
-                      <a href="#" className='inter underline underline-offset-1 hover:text-blue-500'>Sign in</a>
-                      <span className='inter underline underline-offset-1'> | </span>
-                      <a href="#" className='inter underline underline-offset-1 hover:text-blue-500'>Join</a>
+                      <a href="#" className='inter underline underline-offset-1 hover:text-blue-500 text-base'>Sign in</a>
+                      <span className='inter underline underline-offset-1 text-base'> | </span>
+                      <a href="#" className='inter underline underline-offset-1 hover:text-blue-500 text-base'>Join</a>
                   </div>
                   <button onClick={() => setOpen(false)}><FaXmark className='font-bold text-2xl'/></button>
           </div>
-          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500'><FaRegUser className='text-xl'/>My Account</a>
-          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500'><FaRegFile  className='text-xl'/>My Orders</a>
-          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500'><LuCircleHelp className='text-xl'/>Return Information</a>
-          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500'><FaRegMessage className='text-xl'/>Contact Preferences</a>
+          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500 text-base'><FaRegUser className='text-base'/>My Account</a>
+          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500 text-base'><FaRegFile  className='text-base'/>My Orders</a>
+          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500 text-base'><LuCircleHelp className='text-base'/>Return Information</a>
+          <a href="#" className='w-full px-4 py-4 flex items-center gap-3 hover:text-blue-500 text-base'><FaRegMessage className='text-base'/>Contact Preferences</a>
       </div> 
   )   
 
@@ -116,7 +116,7 @@ const SearchBar = () => {
       </div>
 
       {/* WOMAN link for mobile */}
-      <div className="hidden max-lg:flex max-lg:py-3 max-lg:px-3 max-lg:justify-center max-lg:bg-black">
+      <div className="hidden max-lg:flex max-lg:py-3 max-lg:px-3 max-lg:justify-center max-lg:bg-black max-xs:border-b">
         <a
           href="#"
           className="inter cursor-pointer font-bold text-white hover:bg-navigateBg max-xl:hidden max-lg:p-1 max-lg:flex max-lg:border-2 max-lg:border-white"
