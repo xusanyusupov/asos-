@@ -115,8 +115,7 @@ const SearchBar = () => {
         </div>
       </div>
 
-      {/* WOMAN link for mobile */}
-      <div className="hidden max-lg:flex max-lg:py-3 max-lg:px-3 max-lg:justify-center max-lg:bg-black max-xs:border-b">
+      <div className="hidden max-lg:flex max-lg:py-3 max-lg:px-3 max-lg:justify-center max-lg:bg-black max-md:border-b max-md:border-white">
         <a
           href="#"
           className="inter cursor-pointer font-bold text-white hover:bg-navigateBg max-xl:hidden max-lg:p-1 max-lg:flex max-lg:border-2 max-lg:border-white"

@@ -58,7 +58,7 @@ const Index = () => {
       <div className="container relative">
 
         <div className={`relative max-lg:fixed max-lg:bg-modalBg max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:h-screen ${openMenu === false ? 'max-lg:hidden ':''}`}>                                   
-         <div className="max-lg:fixed max-lg:top-0 max-lg:pt-8 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:w-72 max-lg:h-screen max-lg:bg-white max-xs:w-full 
+         <div className="max-lg:fixed max-lg:z-40 max-lg:top-0 max-lg:pt-8 max-lg:left-0 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:w-72 max-lg:h-screen max-lg:bg-white max-xs:w-full 
           max-lg:overflow-y-scroll max-lg:overflow-x-hidden max-lg:gap-5">
           <button className="hidden max-lg:block max-lg:absolute max-lg:top-0 max-lg:right-0 max-lg:text-black " onClick={() => setOpenMenu(false)}><FaXmark className="text-3xl text-navigateBg"/></button>
           {menuItems.map((item) => (
