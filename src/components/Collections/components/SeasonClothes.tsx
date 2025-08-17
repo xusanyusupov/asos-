@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination"; 
-import '@/components/Collections/components/SeasonClothes.css'
+import "@/components/Collections/components/SeasonClothe.css"
  
 
 const slides = [
