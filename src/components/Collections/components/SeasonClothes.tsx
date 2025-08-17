@@ -42,8 +42,6 @@ const slides = [
   
 
 const SeasonClothes = () => {
-  const windowWidth = window.innerWidth
-  console.log(windowWidth);
   
     function insertBreakAfter8Words(text: string) {
         const words = text.split(" ");
