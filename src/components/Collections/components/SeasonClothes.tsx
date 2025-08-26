@@ -76,7 +76,7 @@ const SeasonClothes = () => {
   return (
    <>
    <p className="inter text-5xl font-bold text-center py-5">Sneakers of the season</p>
-   <div className="flex items-center justify-center ">
+   <div className="flex items-center justify-center px-2">
     {
       windowWidth <= 1500 ?
       (
@@ -90,11 +90,11 @@ const SeasonClothes = () => {
           modules={[FreeMode, Pagination]}
           breakpoints={{
             0: { 
-              slidesPerView: 1
+              slidesPerView: 2
             },
             355: { 
-              slidesPerView: 1,
-              spaceBetween: 40,
+              slidesPerView: 2,
+              spaceBetween: 20,
             },
             430: {
               slidesPerView: 2
