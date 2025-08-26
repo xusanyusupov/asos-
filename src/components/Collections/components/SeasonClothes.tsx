@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination"; 
 import "@/components/Collections/components/SeasonClothe.css"
+import { useEffect, useState } from "react";
  
 const slides = [
     [
@@ -42,6 +43,22 @@ const slides = [
 
 const SeasonClothes = () => {
   const windowWidth = window.innerWidth
+  const [freeMode,setFreeMode] = useState(true)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 430) {
+        setFreeMode(false);
+      } else {
+        setFreeMode(true);
+      }
+    };
+
+    handleResize()
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
     function insertBreakAfter8Words(text: string) {
         const words = text.split(" ");
         if (words.length > 8) {
@@ -63,49 +80,49 @@ const SeasonClothes = () => {
     {
       windowWidth <= 1500 ?
       (
-        <Swiper
-        slidesPerView={4}
-        spaceBetween={10}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]}
-        breakpoints={{
-          0: { 
-            slidesPerView: 1
-          },
-          355: { 
-            slidesPerView: 1,
-            spaceBetween: 40,
-          },
-          430: {
-            slidesPerView: 2
-          },
-          720: { 
-            slidesPerView: 3    
-          }
-        }}
-        id="responsive"
-        className={`mySwiper `}
-      >
-        {slides.flat().map((product, i) => (
-          <SwiperSlide key={i}>
-          <div className="flex flex-col items-center w-full h-[300px]">
-          <img  src={product.img}  className="w-full h-full object-cover"  alt={product.name}  />
-          <div className="w-full mt-4 text-center">
-            <span className={`font-extralight inter block text-start text-sm max-xs:text-center`}> {product.name} </span>
-            <div className="text-start mt-2 max-xs:text-center">
-              {product.oldPrice && (
-                <s className="font-medium text-navigateBg">${product.oldPrice}</s>
-              )}
-              <span className={`${product.oldPrice ? 'text-muted ml-2' : 'text-navigateBg'} font-bold`}> ${product.newPrice} </span>
+          <Swiper
+          slidesPerView={4}
+          spaceBetween={10}
+          freeMode={freeMode}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode, Pagination]}
+          breakpoints={{
+            0: { 
+              slidesPerView: 1
+            },
+            355: { 
+              slidesPerView: 1,
+              spaceBetween: 40,
+            },
+            430: {
+              slidesPerView: 2
+            },
+            720: { 
+              slidesPerView: 3    
+            }
+          }}
+          id="responsive"
+          className={`mySwiper `}
+        >
+          {slides.flat().map((product, i) => (
+            <SwiperSlide key={i}>
+            <div className="flex flex-col items-center w-full h-[300px]">
+            <img  src={product.img}  className="w-full h-full object-cover"  alt={product.name}  />
+            <div className="w-full mt-4 text-center">
+              <span className={`font-extralight inter block text-start text-sm max-xs:text-center`}> {product.name} </span>
+              <div className="text-start mt-2 max-xs:text-center">
+                {product.oldPrice && (
+                  <s className="font-medium text-navigateBg">${product.oldPrice}</s>
+                )}
+                <span className={`${product.oldPrice ? 'text-muted ml-2' : 'text-navigateBg'} font-bold`}> ${product.newPrice} </span>
+              </div>
             </div>
-          </div>
-          </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       )
       :
       (

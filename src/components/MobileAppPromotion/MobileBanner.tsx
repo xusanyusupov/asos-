@@ -25,8 +25,8 @@ const MobileBanner = () => {
                             </div>
                         </div>
                        <div className="flex items-center gap-5 max-sm:gap-2">
-                        <button className="bg-slate-100 inter px-8 py-2 rounded-sm max-sm:px-4 whitespace-nowrap max-sm:py-1 max-sm:text-sm">VIEW IN APP</button>
-                        <button className="bg-green-700 inter px-8 py-2 rounded-sm tex-white max-sm:px-4 whitespace-nowrap max-sm:py-1 max-sm:text-sm">GET APP</button>
+                        <button className="bg-slate-100 inter px-8 py-2 rounded-md max-sm:px-4 whitespace-nowrap max-sm:py-1 max-sm:text-sm max-sm:rounded-md">VIEW IN APP</button>
+                        <button className="bg-green-700 inter px-8 py-2 rounded-md tex-white max-sm:px-4 whitespace-nowrap border max-sm:py-1 max-sm:text-sm hover:bg-white hover:border hover:border-green-500 hover:text-green-500 max-sm:rounded-md">GET APP</button>
                        </div>
                     </div>
                     <button className="px-5" onClick={() => setShowMobileApp(false)}><FaXmark className="text-3xl max-sm:text-xl"/></button>
