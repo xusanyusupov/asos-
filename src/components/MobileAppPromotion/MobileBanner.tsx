@@ -13,7 +13,7 @@ const MobileBanner = () => {
     <>
         {
             showMobileApp && (
-                <div className="w-full h-32 fixed bottom-0 left-0 z-10 bg-white flex items-center justify-between max-sm:h-24">
+                <div className="w-full h-32 fixed bottom-0 left-0 z-10 bg-white flex items-center justify-between max-sm:h-24 border-t">
                     <div className="flex flex-col items-start gap-2 px-5 max-sm:px-2">
                         <div className="flex items-center gap-5 max-sm:gap-2">
                             <div className="w-10 h-10 flex items-center justify-center border-2 p-2 rounded-md max-sm:w-9 max-sm:h-9">
