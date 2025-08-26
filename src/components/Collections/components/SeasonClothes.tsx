@@ -77,7 +77,7 @@ const SeasonClothes = () => {
           },
           355: { 
             slidesPerView: 1,
-            spaceBetween: 80,
+            spaceBetween: 40,
           },
           430: {
             slidesPerView: 2
