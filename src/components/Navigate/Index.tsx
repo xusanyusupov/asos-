@@ -11,7 +11,6 @@ import TopMan from "@/components/Navigate/components/TopMan"
 import Trending from "@/components/Navigate/components/Trending"
 import { FaXmark } from "react-icons/fa6"
 import { useMenuStore } from "@/store/navigateStore"
-// import { useMenuStore } from "@/store/navigateStore"
 
 
 
@@ -91,7 +90,7 @@ const Index = () => {
          {!isMobile && (
           <div className="absolute left-0 top-full w-full z-40">
             {menuItems.map((item) => {
-              const Component = componentsMap[item as keyof typeof componentsMap];
+            const Component = componentsMap[item as keyof typeof componentsMap];              
               return (
                 <Component
                   key={item}

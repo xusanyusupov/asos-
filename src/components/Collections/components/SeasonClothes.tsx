@@ -10,14 +10,13 @@ import img9 from "@/assets/collections/swiper/img9.jpg";
 import img10 from "@/assets/collections/swiper/img10.jpg";
 import img11 from "@/assets/collections/swiper/img11.jpg";
 
-import { Navigation, Pagination } from "swiper/modules";
+import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination"; 
 import "@/components/Collections/components/SeasonClothe.css"
  
-
 const slides = [
     [
       { img: img2, name: "adidas Originals Tokyo trainers in white and red", oldPrice: 134.22, newPrice: 107.38 },
@@ -42,7 +41,7 @@ const slides = [
   
 
 const SeasonClothes = () => {
-  
+  const windowWidth = window.innerWidth
     function insertBreakAfter8Words(text: string) {
         const words = text.split(" ");
         if (words.length > 8) {
@@ -60,8 +59,57 @@ const SeasonClothes = () => {
   return (
    <>
    <p className="inter text-5xl font-bold text-center py-5">Sneakers of the season</p>
-   <div className="flex items-center justify-center">
-      <Swiper
+   <div className="flex items-center justify-center ">
+    {
+      windowWidth <= 1500 ?
+      (
+        <Swiper
+        slidesPerView={4}
+        spaceBetween={10}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        breakpoints={{
+          0: { 
+            slidesPerView: 1
+          },
+          355: { 
+            slidesPerView: 1,
+            spaceBetween: 80,
+          },
+          430: {
+            slidesPerView: 2
+          },
+          720: { 
+            slidesPerView: 3    
+          }
+        }}
+        id="responsive"
+        className={`mySwiper `}
+      >
+        {slides.flat().map((product, i) => (
+          <SwiperSlide key={i}>
+          <div className="flex flex-col items-center w-full h-[300px]">
+          <img  src={product.img}  className="w-full h-full object-cover"  alt={product.name}  />
+          <div className="w-full mt-4 text-center">
+            <span className={`font-extralight inter block text-start text-sm max-xs:text-center`}> {product.name} </span>
+            <div className="text-start mt-2 max-xs:text-center">
+              {product.oldPrice && (
+                <s className="font-medium text-navigateBg">${product.oldPrice}</s>
+              )}
+              <span className={`${product.oldPrice ? 'text-muted ml-2' : 'text-navigateBg'} font-bold`}> ${product.newPrice} </span>
+            </div>
+          </div>
+          </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      )
+      :
+      (
+        <Swiper
         navigation
         pagination={{ clickable: true }}
         spaceBetween={30}
@@ -87,6 +135,9 @@ const SeasonClothes = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      )
+    }
+      
     </div>
    </>
   );
